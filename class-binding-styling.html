@@ -10,24 +10,17 @@
 
 <body>
     <div id="app">
-        <form action="">
-            <input v-model="options" type="text">
-            <br>
-            <input v-model="options" type="checkbox" value="option-1">Option-1
-            <br>
-            <input v-model="options" type="checkbox" value="option-2">Option-2
-            <br>
-            <input v-model="options" type="checkbox" value="option-3">Option-3
-        </form>
-        <p>{{ message }}</p>
+        <h1 :class="{active: isActive, 'notActive': hasError }">{{ message }}</h1>
+        <h1 :class="[isActive ? 'active' : 'noActive']">{{ message }}</h1>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script>
         let vm = new Vue({
             el: '#app',
             data: {
-                options: [],
-                message: ''
+                isActive: false,
+                hasError: true,
+                message: 'Hello World',
             }
         });
     </script>

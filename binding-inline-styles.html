@@ -10,24 +10,21 @@
 
 <body>
     <div id="app">
-        <form action="">
-            <input v-model="options" type="text">
-            <br>
-            <input v-model="options" type="checkbox" value="option-1">Option-1
-            <br>
-            <input v-model="options" type="checkbox" value="option-2">Option-2
-            <br>
-            <input v-model="options" type="checkbox" value="option-3">Option-3
-        </form>
-        <p>{{ message }}</p>
+        <div :style="{color: 'red', fontSize: fontSize + 'px' }">{{ message }}</div>
+
+        <div :style="styleObject">Hello</div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script>
         let vm = new Vue({
             el: '#app',
             data: {
-                options: [],
-                message: ''
+                fontSize: 300,
+                message: "Hello",
+                styleObject: {
+                    color: 'blue',
+                    fontSize: '500px',
+                }
             }
         });
     </script>
