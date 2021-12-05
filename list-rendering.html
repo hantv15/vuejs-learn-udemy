@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="post in posts" :key="post.id">{{ post.title }}</li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                posts: [{
+                        id: 1,
+                        title: "post 1",
+                        content: "lorem"
+                    }, {
+                        id: 2,
+                        title: "post 2",
+                        content: "lorem"
+                    }, {
+                        id: 3,
+                        title: "post 3",
+                        content: "lorem"
+                    }, {
+                        id: 4,
+                        title: "post 4",
+                        content: "lorem"
+                    },
+
+                ]
+            },
+            methods: {
+                myFunction() {
+                    this.fontSize++;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
